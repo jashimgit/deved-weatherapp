@@ -23,9 +23,11 @@ window.addEventListener('load', () => {
 function displayCurrentWeather(params) {
     let timeZone = document.querySelector('.location-timezone');
     let temperature = document.querySelector('.temperature-degree');
-    let tempDes = document.querySelector('.temperature-description')
+    let tempDes = document.querySelector('.temperature-description');
+    let icon = document.querySelector('#weather-icon');
     console.log(params);
     timeZone.innerText = `${params.name} / ${params.sys.country}`;
     temperature.innerText = `${params.main.temp}`;
     tempDes.innerText = `${params.weather[0].description}`;
+    icon.src = `https://openweathermap.org/img/wn/${params.weather[0].icon}@2x.png`
 }
