@@ -4,6 +4,15 @@ window.addEventListener('load', () => {
     let lon;
     let lat;
 
+// current day section
+let today = new Date();
+const day = today.getDay();
+const daylist = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thusday', 'Friday']
+
+let currentDay = document.getElementById('current-day');
+currentDay.innerText = `${daylist[day]}`;
+
+
     // console.log(timeZone.innerText);
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
